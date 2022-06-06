@@ -25,9 +25,9 @@ eureka:
     fetch-registry: true
     # Eureka Server的地址
     service-url:
-      defaultZone: http://localhost:7001/eureka
+#      defaultZone: http://localhost:7001/eureka
       # 集群版,将本微服务注册到多个eureka server,只需要将defaultZone改为多个地址,逗号隔开
-#      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com/eureka
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com/eureka
 
   # 以下两个配置生效的前提是pom中引入了spring-boot-starter-web和spring-boot-starter-actuator
   instance:
@@ -36,6 +36,6 @@ eureka:
     # 鼠标放在status栏的微服务id上时左下角显示ip地址
     prefer-ip-address: true
     # 向服务端发送心跳的时间间隔.单位s.默认30
-    lease-renewal-interval-in-seconds: 1
+#    lease-renewal-interval-in-seconds: 1
     # 服务端收到最后一次心跳后的等待时间,超过这个时间剔除服务.默认90
-    lease-expiration-duration-in-seconds: 2
+#    lease-expiration-duration-in-seconds: 2
