@@ -28,6 +28,17 @@ public class PaymentController {
     @Value("${server.port}")
     private String serverPort;
 
+
+    /**
+     * 测试手写轮询算法,需要注释掉调用端80的RestTemplate上面的@loadbalanced
+     * @return
+     */
+    @GetMapping("/payment/lb")
+    public String getPaymentLB(){
+        return serverPort;
+    }
+
+
     @PostMapping("/payment/create")
                                         //@RequestBody: 把请求参数映射到实体类
     public CommonResult<Payment> create(@RequestBody Payment payment){

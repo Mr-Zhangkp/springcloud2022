@@ -18,7 +18,10 @@ public class ApplicationContextConfig {
      * 此时RestTemplate不知道要访问集群下面的具体哪个节点
      * 需要加一个@LocdBalanced注解实现负载均衡
      */
-    @LoadBalanced
+
+    //@LoadBalanced
+    //测试自己写的轮询算法,需要注释掉LoadBalanced注解
+
     public RestTemplate getRestTemplate(){
         return new RestTemplate();
     }
